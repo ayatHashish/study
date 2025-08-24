@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attachment</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+
+        <div class="attachment-container" style="direction: rtl;">
+            <label>
+                الملفات المرفقه
+
+            </label>
+            <div class="upload-container">
+                <div class="upload-box" id="dropArea"
+                    onclick="document.getElementById('fileInput').click()">
+
+                    <img class="ms-2" src="/images/cloud-computing.svg"
+                        alt="Alternate Text" />
+                    اسحب وافلت الملفات هنا أو اضغط لاختيار ملف
+                    <input type="file" id="fileInput" multiple hidden>
+                </div>
+
+                <div class="uploaded-files" id="fileList">
+
+                    <label id="lable" style="display:none;"> الملفات المحملة
+                    </label>
+
+                    <!-- يتم إدخال العناصر ديناميكيًا هنا -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="./js/js.js">
+        </script>
+    </body>
+</html>

@@ -20,12 +20,16 @@
                             alt="illustration" class="illustration" />
                         <h1 class="opacity">LOGIN</h1>
                         <form>
-                            <input type="text" placeholder="USERNAME" />
-                            <input type="text" placeholder="NAME" />
-                            <input type="password" placeholder="PASSWORD" />
+                            <input name="username" type="text"
+                                placeholder="USERNAME" />
+                            <!-- <input name="name" type="email" placeholder="NAME" /> -->
+                            <input name="email" type="email" placeholder="EMAIL" />
+                            <input name="password" type="password"
+                                placeholder="PASSWORD" />
 
                             <!-- <input type="password" placeholder="PASSWORD" /> -->
-                            <button class="opacity">SUBMIT</button>
+                            <button id="submitButton" type="submit"
+                                class="opacity">SUBMIT</button>
                         </form>
                         <div class="register-forget opacity">
                             <a href="login.html">SING-IN</a>
@@ -38,7 +42,8 @@
             </section>
 
         </main>
-        <script src="./js/main.js"></script>
+        <!-- <script src="./js/main.js"></script> -->
+        <script src="./js/registration.js"></script>
 
     </body>
 </html>
