@@ -52,9 +52,11 @@
 // }
 
 // renderRecipes(recipes);
+// drawProduct
 
 let productsContainer = document.querySelector("#products");
-function drawProduct() {
+// 
+(function drawProduct() {
   let productsUI = recipes.map((item) => {
     return `
     
@@ -97,9 +99,10 @@ function drawProduct() {
 
   // let productsContainer = document.querySelector("#products");
   productsContainer.innerHTML = productsUI;
-}
+})();
 
-drawProduct();
+
+
 
 function addToCart(id) {
   // let itemRisapi = recipes.filter ((item) => item.id === id );
@@ -107,9 +110,9 @@ function addToCart(id) {
 
   let addItem = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
 
-  if (addItem) {
-    addItem.map;
-  }
+  // if (addItem) {
+  //   addItem.map;
+  // }
   if (getUserName) {
     let itemRisapi = recipes.find((item) => item.id === id);
     console.log(itemRisapi);
@@ -130,4 +133,11 @@ function addToCart(id) {
     window.location.href = "login.html";
   }
   // let bad = document.querySelector(".under-badge span");
+}
+
+
+function saveItemDate(id) {
+
+
+
 }

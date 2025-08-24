@@ -6,8 +6,8 @@ if (productsUICart) {
   drawCartProductUI(items);
 }
 
-function drawCartProductUI(recipes) {
-  let productsUI = recipes.map((item) => {
+function drawCartProductUI(items) {
+  let productsUI = items.map((item) => {
     return `
     
             <div class="container">
@@ -40,13 +40,23 @@ function drawCartProductUI(recipes) {
                                 <p>40 min</p>
                             </div>
                         </div>
-                        <button class="btn" onclick ="addToCart(${item.id})">ADd to Cart <i
+                        <button class="btn" onclick ="removeFromCart(${item.id})">Remove From Cart <i
                                 class="fa fa-arrow-right"></i></button>
                     </div>
                 </div>
     `;
   });
 
-//   let productsContainer = document.querySelector("#products");
+  //   let productsContainer = document.querySelector("#products");
   productsContainer.innerHTML = productsUI;
+}
+
+// RemoveItemFromCart
+function removeFromCart(id) {
+  if (productsContainer) {
+    let productsUICart = localStorage.getItem("cart");
+    let items = JSON.parse(productsUICart);
+    let filteredItems = items.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(filteredItems));
+  }
 }

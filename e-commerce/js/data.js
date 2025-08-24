@@ -1,4 +1,4 @@
-const recipes = [
+const recipesDB = [
   {
     id: 1,
     title: "chocolate cake",
@@ -24,3 +24,6 @@ const recipes = [
     imageUrl: "https://example.com/chocolate-cake.jpg",
   },
 ];
+
+
+localStorage.setItem("recipes", JSON.stringify(recipesDB));
