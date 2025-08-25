@@ -38,8 +38,9 @@ select:not(:has(option:checked[disabled])) {
 
 .uploaded-files {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .file-item {
@@ -51,7 +52,7 @@ select:not(:has(option:checked[disabled])) {
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-
+    flex-basis: 47% !important;
     border-radius: 0.5rem;
     border: 1px solid #D3D3D3;
     background: #FFF;
@@ -112,7 +113,7 @@ select:not(:has(option:checked[disabled])) {
 
 .uploaded-files {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 10px;
     padding: 20px 0;
 }
