@@ -5,12 +5,7 @@ let mainContractFile = null; // ملف التعاقد (واحد فقط)
 let otherFiles = []; // باقي الملفات
 let otherFileNames = []; // أسماء باقي الملفات (لمنع التكرار)
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("transfersForm");
-  if (!form) return;
 
-  form.addEventListener("reset", () => resetAll());
-});
 
 // ====== أدوات مساعدة ======
 function showErrorMessage(msg) {
@@ -18,23 +13,6 @@ function showErrorMessage(msg) {
   alert(msg);
 }
 
-function resetAll() {
-  const fileInput = document.getElementById("fileInput");
-  const contractFile = document.getElementById("contractFile");
-  const othersList = document.getElementById("fileList");
-  const contractLabel = document.getElementById("contractLabel");
-  const othersLabel = document.getElementById("othersLabel");
-
-  if (fileInput) fileInput.value = "";
-  if (contractFile) contractFile.innerHTML = "";
-  if (othersList) othersList.innerHTML = "";
-  if (contractLabel) contractLabel.style.display = "none";
-  if (othersLabel) othersLabel.style.display = "none";
-
-  mainContractFile = null;
-  otherFiles = [];
-  otherFileNames = [];
-}
 
 function validateFile(file) {
   if (!file) return false;
