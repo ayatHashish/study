@@ -63,6 +63,10 @@ background: rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:c
                         <button onclick="nextPage()">➡️ الصفحة التالية</button>
                         <button onclick="zoomIn()">➕ تكبير</button>
                         <button onclick="zoomOut()">➖ تصغير</button>
+                        <button id="rotateImageBtn" onclick="rotateImage()"
+                            style="display:none;">🔄 تدوير الصورة</button>
+                        <button id="rotatePdfBtn" onclick="rotatePDF()"
+                            style="display:none;">📄 تدوير PDF</button>
                     </div>
                 </div>
 
@@ -102,13 +106,27 @@ background: rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:c
 
             <button id="nextFileBtn" onclick="nextFile()"
                 style="position:absolute; right:10px; top:50%; transform:translateY(-50%);">▶</button>
- </div>
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-            <script>
-    
-        </script>
-            <script src="./js/js.js">
-        </script>
-        </body>
-    </html>
+        </div>
+        <!-- <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script> -->
+
+        <!-- <script src="./js/pdf.min.js">  </script> -->
+     <script type="module">
+  import * as pdfjsLib from "./js/pdf.mjs";
+
+  // ربط الـ worker
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "./js/pdf.worker.mjs";
+
+  // تحميل ملف PDF
+  const url = "./files/test.pdf";
+  const loadingTask = pdfjsLib.getDocument(url);
+  loadingTask.promise.then(pdf => {
+    console.log("عدد الصفحات:", pdf.numPages);
+  });
+</script>
+        <script src="./js/pdf.worker.mjs"></script>
+        <script src="./js/pdf.sandbox.mjs "></script>
+        <script src="./js/js.js"> </script>
+
+    </body>
+</html>
